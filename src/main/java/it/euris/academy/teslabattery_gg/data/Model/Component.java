@@ -66,7 +66,7 @@ public class Component implements Model {
 	@OneToMany(mappedBy = "components")
 	@Builder.Default
 	@JsonIgnore 
-	private HashSet<Component_Battery> book_PublishingHause = new HashSet<Component_Battery>();
+	private HashSet<Component_Battery> comp_Battery = new HashSet<Component_Battery>();
 	 
 	
 	public Component(String componentId) {
