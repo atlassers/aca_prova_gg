@@ -1,4 +1,4 @@
-package ie.euris.academy.teslabattery_gg;
+package it.euris.academy.teslabattery_gg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

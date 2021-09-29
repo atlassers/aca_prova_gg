@@ -23,7 +23,7 @@ public class Component_Battery_Dto implements Dto {
 	private String batteryId;
 	
 	@Override
-	public Model toModel() {
+	public Component_Battery toModel() {
 		return Component_Battery.builder()
 				.id(new Component_Battery_Key(UT.toLong(componentId), UT.toLong(batteryId)))
 				.component(new Component(componentId))

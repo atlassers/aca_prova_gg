@@ -1,7 +1,11 @@
 package it.euris.academy.teslabattery_gg.data.Dto;
 
+import java.time.Instant;
+
+import it.euris.academy.teslabattery_gg.Utilities.EnumsUT;
+import it.euris.academy.teslabattery_gg.Utilities.UT;
 import it.euris.academy.teslabattery_gg.data.Archetype.Dto;
-import it.euris.academy.teslabattery_gg.data.Archetype.Model;
+import it.euris.academy.teslabattery_gg.data.Model.Robot;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,10 +23,12 @@ public class RobotDto implements Dto{
 	private String robotFunction;
 	
 	@Override
-	public Model toModel() {
-		// TODO Auto-generated method stub
-		return null;
+	public Robot toModel() {
+		return Robot.builder()
+				.id(UT.toLong(robotId))
+				.robotCode(robotCode)
+				.creationDate(Instant.parse(robotCreationDate))
+				.function(EnumsUT.getRobotFunction(robotFunction))
+				.build();
 	}
-
-	
 }

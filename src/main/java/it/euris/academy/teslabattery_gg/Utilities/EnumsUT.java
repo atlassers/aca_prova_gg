@@ -1,6 +1,7 @@
 package it.euris.academy.teslabattery_gg.Utilities;
 
 import it.euris.academy.teslabattery_gg.Enums.ChemicalRisk;
+import it.euris.academy.teslabattery_gg.Enums.RobotFunction;
 import it.euris.academy.teslabattery_gg.Enums.TypeChemicalRisk;
 
 public class EnumsUT {
@@ -31,6 +32,25 @@ public class EnumsUT {
 			return null;
 		}
 		for (TypeChemicalRisk type : TypeChemicalRisk.values()) {
+			if (type.name().equals(value)) {
+				return type;
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	
+	public static String toString(RobotFunction value) {
+		return value == null ? null : value.name();
+	}
+
+	public static RobotFunction getRobotFunction(String value) {
+		if (value == null) {
+			return null;
+		}
+		for (RobotFunction type : RobotFunction.values()) {
 			if (type.name().equals(value)) {
 				return type;
 			}
