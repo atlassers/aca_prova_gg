@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.euris.academy.teslabattery_gg.Repository.ComponentRepository;
+import it.euris.academy.teslabattery_gg.Repository.Projection.ComponentsByBattery;
 import it.euris.academy.teslabattery_gg.Service.ComponentService;
 import it.euris.academy.teslabattery_gg.data.Dto.ComponentDto;
 import it.euris.academy.teslabattery_gg.data.Model.Component;
@@ -77,14 +78,17 @@ public class ComponentServiceImpl implements ComponentService{
 
 	@Override
 	public Long getTotalComponentRowsDeleted() {
-		// TODO Auto-generated method stub
 		return componentRepository.getComponentTotalRowsDeleted();
 	}
 
 	@Override
 	public Long getTotalComponentRowsNotDeleted() {
-		// TODO Auto-generated method stub
 		return componentRepository.getComponentTotalRowsNotDeleted();
+	}
+
+	@Override
+	public List<ComponentsByBattery> getTotalComponentByBattery(Long id) {
+		return componentRepository.getComponentsByBattery(id);
 	}
 
 }

@@ -3,6 +3,7 @@ package it.euris.academy.teslabattery_gg.Service;
 import java.time.Instant;
 import java.util.List;
 
+import it.euris.academy.teslabattery_gg.Repository.Projection.ComponentsByBattery;
 import it.euris.academy.teslabattery_gg.data.Dto.ComponentDto;
 
 public interface ComponentService {
@@ -21,4 +22,6 @@ public interface ComponentService {
 	public Long getTotalComponentRows();
 	public Long getTotalComponentRowsDeleted();
 	public Long getTotalComponentRowsNotDeleted();
+	
+	public List<ComponentsByBattery> getTotalComponentByBattery(Long id);
 }

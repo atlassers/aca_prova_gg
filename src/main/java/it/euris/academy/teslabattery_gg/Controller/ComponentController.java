@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.euris.academy.teslabattery_gg.Repository.Projection.ComponentsByBattery;
 import it.euris.academy.teslabattery_gg.Service.ComponentService;
 import it.euris.academy.teslabattery_gg.data.Dto.ComponentDto;
 
@@ -26,6 +27,11 @@ public class ComponentController {
 
 	@Autowired
 	ComponentService componentService;
+	
+	@GetMapping("/v1/componentsByBattery/components/{id}")
+	public List<ComponentsByBattery> getComponentsByBattery(@PathVariable("id") Long id){
+		return componentService.getTotalComponentByBattery(id);
+	}
 	
 	@GetMapping("/v1/total")
 	public Long getTotalComponentRows() {

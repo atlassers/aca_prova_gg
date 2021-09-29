@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import it.euris.academy.teslabattery_gg.Repository.Projection.ComponentsByBattery;
 import it.euris.academy.teslabattery_gg.data.Model.Component;
 
 public interface ComponentRepository extends JpaRepository<Component, Long> {
@@ -25,4 +26,7 @@ public interface ComponentRepository extends JpaRepository<Component, Long> {
 	
 	@Query(value = "SELECT COUNT(*) FROM components WHERE deleted = false", nativeQuery = true)
 	Long getComponentTotalRowsNotDeleted();
+	
+	@Query(value = "SELECT COUNT(IF(component_id =:id, 1, NULL)) AS totalComponentsByBattery FROM academy_teslabattery_gg.component_battery ", nativeQuery = true)
+	public List<ComponentsByBattery> getComponentsByBattery(@Param("id") Long id );
 }
