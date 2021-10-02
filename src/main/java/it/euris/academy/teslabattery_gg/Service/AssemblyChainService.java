@@ -14,7 +14,10 @@ public interface AssemblyChainService {
 	public AssemblyChainDto update(AssemblyChainDto assemblyChainDto);
 	public Boolean delete(Long id);
 	
-	public AssemblyChain getAssemblyChainById(Long id);
 	public List<AssemblyChainDto> getAssemblyChainByName(String name);
 	public List<AssemblyChainDto> getAssemblyChainByCompletationTime(Instant completationTime);
+	
+	public Long getTotalAssemblyChainRows();
+	public Long getTotalAssemblyChainRowsDeleted();
+	public Long getTotalAssemblyChainRowsNotDeleted();
 }

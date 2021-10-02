@@ -2,6 +2,7 @@ package it.euris.academy.teslabattery_gg.data.Model;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,8 +28,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "assembly_chains")
-@SQLDelete(sql = "UPDATE assembly_chain SET deleted = true WHERE id=? ")
+@Table(name = "assemblyChain")
+@SQLDelete(sql = "UPDATE assemblyChain SET deleted = true WHERE id=? ")
 @Where(clause = "deleted = false")
 @Entity
 public class AssemblyChain implements Model {
@@ -47,11 +48,14 @@ public class AssemblyChain implements Model {
 	@Column (name = "completation_time")
 	private Instant completationTime;
 	
-	@OneToMany(mappedBy = "assembly_chains")
+	/*
+	 * 
+	 */
+	@OneToMany(mappedBy = "assemblyChain")
 	@Builder.Default
 	@JsonIgnore
-	private HashSet<Robot_AssemblyChain> robot_AssemblyChain =
-	new HashSet<Robot_AssemblyChain>();
+	private Set<Robot_AssemblyChain> robot_AssemblyChain 
+	= new HashSet<Robot_AssemblyChain>();
 	
 	public AssemblyChain(String assemblyChainId) {
 		this.id = Long.parseLong(assemblyChainId);

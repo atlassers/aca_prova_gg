@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "component_battery")
+@Table(name = "robot_assemblyChain")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -29,7 +29,7 @@ public class Robot_AssemblyChain implements Model{
 	
 	@ManyToOne
 	@MapsId("robotId")
-	@JoinColumn(name = "robotId")
+	@JoinColumn(name = "robot_id")
 	private Robot robot;
 	
 	@ManyToOne
@@ -37,7 +37,7 @@ public class Robot_AssemblyChain implements Model{
 	@JoinColumn(name = "assemblyChain_id")
 	private AssemblyChain assemblyChain;
 	
-	@Column
+	@Column(name = "robot_position")
 	private Long robotPosition;
 
 	@Override

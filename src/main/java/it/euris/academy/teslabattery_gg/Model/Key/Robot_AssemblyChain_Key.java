@@ -18,7 +18,7 @@ public class Robot_AssemblyChain_Key implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name = "robot_id")
-	Long robotId;
+	Long robotsId;
 	
 	@Column(name = "assemblyChain_id")
 	Long assemblyChainId;

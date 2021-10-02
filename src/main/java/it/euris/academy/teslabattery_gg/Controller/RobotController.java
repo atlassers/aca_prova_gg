@@ -20,7 +20,7 @@ import it.euris.academy.teslabattery_gg.Service.RobotService;
 import it.euris.academy.teslabattery_gg.data.Dto.RobotDto;
 
 @RestController
-@RequestMapping("/robots")
+@RequestMapping("/robot")
 @ResponseStatus(HttpStatus.CREATED)
 public class RobotController {
 
@@ -72,7 +72,7 @@ public class RobotController {
 		return robotService.delete(id);
 	}
 	
-	@PutMapping("/v1")
+	@PutMapping("/v1/update/{robot}")
 	public RobotDto update(@RequestBody RobotDto robotDto) {
 		return robotService.update(robotDto);
 	}

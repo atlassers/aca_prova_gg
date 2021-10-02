@@ -3,6 +3,7 @@ package it.euris.academy.teslabattery_gg.data.Model;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "batteries")
+@Table(name = "battery")
 @SQLDelete(sql = "UPDATE batteries SET deleted = true WHERE id=? ")
 @Where(clause = "deleted = false")
 @Entity
@@ -55,10 +56,10 @@ public class Battery implements Model {
 	private Boolean deleted = false;
 	
 
-	@OneToMany(mappedBy = "batteries")
+	@OneToMany(mappedBy = "battery")
 	@Builder.Default
 	@JsonIgnore
-	private HashSet<Component_Battery> component_Battery = new HashSet<Component_Battery>();
+	private Set<Component_Battery> component_Battery = new HashSet<Component_Battery>();
 	
 	
 	public Battery(String batteryId) {
@@ -72,7 +73,6 @@ public class Battery implements Model {
 				.batteryName(name)
 				.batteryCreationDate(creationDate.toString())
 				.batteryExpirationDate(expirationDate.toString())
-				.build();
-				
+				.build();	
 	}	
 }

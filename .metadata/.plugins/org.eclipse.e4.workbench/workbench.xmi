@@ -342,13 +342,13 @@
       <tags>categoryTag:Ant</tags>
     </sharedElements>
     <trimBars xmi:id="_H6QCoSEIEeybB5CcmsI6TA" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.platform">
-      <children xsi:type="menu:ToolBar" xmi:id="_IsibMCEIEeybB5CcmsI6TA">
+      <children xsi:type="menu:ToolBar" xmi:id="_IsibMCEIEeybB5CcmsI6TA" visible="false">
         <tags>toolbarSeparator</tags>
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Isk3cCEIEeybB5CcmsI6TA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_IsxEsCEIEeybB5CcmsI6TA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_H7oiwSEIEeybB5CcmsI6TA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_twtR0CFSEey8Ke1aCLmDvQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_H7oiwSEIEeybB5CcmsI6TA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Isk3cSEIEeybB5CcmsI6TA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -376,7 +376,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_IsmFkCEIEeybB5CcmsI6TA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Iszg8CEIEeybB5CcmsI6TA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_H7nUqyEIEeybB5CcmsI6TA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_twtR3SFSEey8Ke1aCLmDvQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_H7nUqyEIEeybB5CcmsI6TA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_IsmFkSEIEeybB5CcmsI6TA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -388,6 +388,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_IsmsoCEIEeybB5CcmsI6TA" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_bPugYCFGEeym9cBbQP_Brg" elementId="group.file" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_bPugYSFGEeym9cBbQP_Brg" elementId="group.file" toBeRendered="false"/>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_IyDNUCEIEeybB5CcmsI6TA" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>

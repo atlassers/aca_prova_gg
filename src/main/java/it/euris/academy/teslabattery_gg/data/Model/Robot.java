@@ -2,6 +2,7 @@ package it.euris.academy.teslabattery_gg.data.Model;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,10 +32,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "robots")
-@Entity
-@SQLDelete(sql = "UPDATE robots SET deleted = true WHERE id=?")
+@Table(name = "robot")
+@SQLDelete(sql = "UPDATE robot SET deleted = true WHERE id=?")
 @Where(clause = "deleted = false")
+@Entity
 public class Robot implements Model {
 
 	@Id
@@ -47,28 +48,19 @@ public class Robot implements Model {
 
 	@Column(name = "creation_Date")
 	private Instant creationDate;
-
-	/*
-	 * potrei fare nella colonna robot_assemblyChain un valore positionaOrder come
-	 * rating in studentCourse
-	 * 
-	 * @Column(name = "positional_Order") 
-	 * private Long positionalOrder;
-	 */
-
+	
 	@Column(name = "deleted")
 	@Builder.Default
 	private Boolean deleted = false;
 
-	@Column(name = "function")
+	@Column(name = "robot_function")
 	@Enumerated(value = EnumType.STRING)
 	private RobotFunction function;
 	
-	@OneToMany(mappedBy = "robots")
+	@OneToMany(mappedBy = "robot")
 	@Builder.Default
 	@JsonIgnore
-	private HashSet<Robot_AssemblyChain> robot_AssemblyChain = 
-	new HashSet<Robot_AssemblyChain>();
+	private Set<Robot_AssemblyChain> robot_AssemblyChain = new HashSet<Robot_AssemblyChain>();
 
 	public Robot(String robotId) {
 		if(robotId != null) {
@@ -85,17 +77,4 @@ public class Robot implements Model {
 				.robotFunction(EnumsUT.toString(function))
 				.build();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

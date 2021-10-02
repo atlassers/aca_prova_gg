@@ -24,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.authenticated()
 		
 		.antMatchers("/productiveCycles/").hasRole("manager")
-		.antMatchers("/robots/").hasRole("manager")
-		.antMatchers("/components/").hasRole("manager")
-		.antMatchers("/assemblyChains/").hasRole("manager")
-		.antMatchers("/batteries/").hasRole("manager")
-		.antMatchers("/supervisors").hasRole("manager")
+		.antMatchers("/robot/").hasRole("manager")
+		.antMatchers("/component/").hasRole("manager")
+		.antMatchers("/assemblyChain/").hasRole("manager")
+		.antMatchers("/battery/").hasRole("manager")
+		.antMatchers("/supervisor").hasRole("manager")
 		
 		.and()
 		.httpBasic();

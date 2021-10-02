@@ -20,7 +20,7 @@ import it.euris.academy.teslabattery_gg.Service.BatteryService;
 import it.euris.academy.teslabattery_gg.data.Dto.BatteryDto;
 
 @RestController
-@RequestMapping("/robots")
+@RequestMapping("/battery")
 @ResponseStatus(HttpStatus.CREATED)
 public class BatteryController {
 
@@ -72,7 +72,7 @@ public class BatteryController {
 		return batteryService.delete(id);
 	}
 	
-	@PutMapping("/v1")
+	@PutMapping("/v1/update/{battery}")
 	public BatteryDto update(@RequestBody BatteryDto batteryDto) {
 		return batteryService.update(batteryDto);
 	}

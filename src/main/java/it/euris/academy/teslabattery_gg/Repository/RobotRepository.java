@@ -16,13 +16,13 @@ public interface RobotRepository extends JpaRepository<Robot, Long>  {
 	public List<Robot> findRobotByFunction(@Param("function") String function);
 	public List<Robot> findRobotByCreationDate(@Param("creationDate") Instant creationDate);
 	
-	@Query(value = "SELECT COUNT(*) FROM robots", nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM robot", nativeQuery = true)
 	Long getRobotTotalRows();
 	
-	@Query(value = "SELECT COUNT(*) FROM robots WHERE deleted = true", nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM robot WHERE deleted = true", nativeQuery = true)
 	Long getRobotTotalRowsDeleted();
 	
-	@Query(value = "SELECT COUNT(*) FROM robots WHERE deleted = false", nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM robot WHERE deleted = false", nativeQuery = true)
 	Long getRobotTotalRowsNotDeleted();
 	
 }

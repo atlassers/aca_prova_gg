@@ -2,6 +2,7 @@ package it.euris.academy.teslabattery_gg.data.Model;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,7 +34,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "components")
+@Table(name = "component")
 @Entity
 @SQLDelete(sql = "UPDATE components SET deleted = true WHERE id=?")
 @Where(clause = "deleted = false")
@@ -63,10 +64,10 @@ public class Component implements Model {
 	private Boolean deleted = false;
 
 	
-	@OneToMany(mappedBy = "components")
+	@OneToMany(mappedBy = "component")
 	@Builder.Default
 	@JsonIgnore 
-	private HashSet<Component_Battery> comp_Battery = new HashSet<Component_Battery>();
+	private Set<Component_Battery> comp_Battery = new HashSet<Component_Battery>();
 	 
 	
 	public Component(String componentId) {
